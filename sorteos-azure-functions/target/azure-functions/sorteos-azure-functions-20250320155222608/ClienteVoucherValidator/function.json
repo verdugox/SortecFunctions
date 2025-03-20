@@ -1,0 +1,12 @@
+{
+  "scriptFile" : "../sorteos-azure-functions-1.0-SNAPSHOT.jar",
+  "entryPoint" : "com.sorteos.functions.ClienteVoucherValidator.run",
+  "bindings" : [ {
+    "type" : "eventHubTrigger",
+    "direction" : "in",
+    "name" : "clienteEvent",
+    "connection" : "EventHubConnectionString",
+    "eventHubName" : "clientes-registro-eventhub",
+    "cardinality" : "MANY"
+  } ]
+}
