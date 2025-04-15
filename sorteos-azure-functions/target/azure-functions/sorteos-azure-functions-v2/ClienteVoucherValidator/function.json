@@ -6,7 +6,7 @@
     "direction" : "in",
     "name" : "clienteEvent",
     "connection" : "EventHubConnectionString",
-    "eventHubName" : "clientes-registro-eventhub",
+    "eventHubName" : "Clientes-registro-eventhub",
     "cardinality" : "MANY"
   } ]
 }

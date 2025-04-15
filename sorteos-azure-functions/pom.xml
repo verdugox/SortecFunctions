@@ -17,7 +17,7 @@
         <java.version>17</java.version>
         <azure.functions.maven.plugin.version>1.24.0</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>2.2.0</azure.functions.java.library.version>
-        <functionAppName>sorteos-azure-functions-20250320155222608</functionAppName>
+        <functionAppName>sorteos-azure-functions-v2</functionAppName>
     </properties>
 
     <dependencies>
@@ -28,11 +28,18 @@
             <version>${azure.functions.java.library.version}</version>
         </dependency>
 
-        <!-- Jackson para manejo de JSON (corrección del error de ObjectMapper) -->
+        <!-- Jackson para JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
+        </dependency>
+
+        <!-- Cliente HTTP para llamadas a APIs -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.2.1</version>
         </dependency>
 
         <!-- Test (JUnit y Mockito) -->
@@ -48,10 +55,19 @@
             <version>2.23.4</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Compilador Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -62,23 +78,38 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+
+            <!-- Plugin Azure Functions -->
             <plugin>
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-functions-maven-plugin</artifactId>
                 <version>${azure.functions.maven.plugin.version}</version>
                 <configuration>
                     <appName>${functionAppName}</appName>
-                    <resourceGroup>java-functions-group</resourceGroup>
-                    <appServicePlanName>java-functions-app-service-plan</appServicePlanName>
-                    <region>westus</region>
+                    <resourceGroup>afunctions-rg</resourceGroup>
+                    <region>East US 2</region>
                     <runtime>
                         <os>windows</os>
                         <javaVersion>17</javaVersion>
                     </runtime>
+                    <deploymentType>zip</deploymentType>
+                    <disableAppInsights>true</disableAppInsights>
+                    <pricingTier>Consumption</pricingTier>
                     <appSettings>
                         <property>
                             <name>FUNCTIONS_EXTENSION_VERSION</name>
                             <value>~4</value>
+                        </property>
+                        <property>
+                            <name>EventHubConnectionString</name>
+                        </property>
+                        <property>
+                            <name>OCR_SUBSCRIPTION_KEY</name>
+                            <value>3cSGjTx2DuUuWFec5fnSe3rcBbFWcDOGOsLwzHlCYkJpq8YBhokbJQQJ99BCACYeBjFXJ3w3AAAFACOG97fk</value>
+                        </property>
+                        <property>
+                            <name>OCR_ENDPOINT</name>
+                            <value>https://sorteos-ocr-service.cognitiveservices.azure.com/</value>
                         </property>
                     </appSettings>
                 </configuration>
@@ -91,6 +122,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Limpiar -->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.1.0</version>
@@ -104,5 +137,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

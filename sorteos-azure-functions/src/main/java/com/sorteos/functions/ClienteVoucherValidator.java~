@@ -191,8 +191,9 @@ public class ClienteVoucherValidator {
         String mesAbrev = fechaHoy.format(DateTimeFormatter.ofPattern("MMM", locale)).toLowerCase().replace(".", "");
         String mesCompleto = fechaHoy.format(DateTimeFormatter.ofPattern("MMMM", locale)).toLowerCase();
 
-        boolean contieneFechaFragmentada = textoLimpio.contains(dia)
-                && (textoLimpio.contains(mesAbrev) || textoLimpio.contains(mesCompleto))
+        boolean contieneFechaFragmentada = (
+                (textoLimpio.contains(" " + dia + " ") || textoLimpio.startsWith(dia + " "))
+        ) && (textoLimpio.contains(mesAbrev) || textoLimpio.contains(mesCompleto))
                 && textoLimpio.contains(anio);
 
         boolean contieneFechaDeHoy = contieneFechaExacta || contieneFechaFragmentada;

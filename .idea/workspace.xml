@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f8fc0eb-22cc-433a-ac9e-1f2e24be7834" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/src/main/java/com/sorteos/ClienteVoucherValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/src/main/java/com/sorteos/ClienteVoucherValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/src/main/java/com/sorteos/functions/ClienteVoucherValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/src/main/java/com/sorteos/functions/ClienteVoucherValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/ClienteVoucherValidator/function.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/host.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/lib/azure-functions-java-library-2.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/lib/jackson-annotations-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/lib/jackson-core-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/lib/jackson-databind-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/local.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/azure-functions/sorteos-azure-functions-20250320155222608/sorteos-azure-functions-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/classes/com/sorteos/functions/ClienteVoucherValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/classes/com/sorteos/functions/ClienteVoucherValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteos-azure-functions/target/sorteos-azure-functions-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sorteos-azure-functions/target/sorteos-azure-functions-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +50,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven. [clean,install].executor": "Run",
+    "Maven.sorteos-azure-functions [azure-functions:deploy].executor": "Run",
     "Maven.sorteos-azure-functions [clean,install...].executor": "Run",
+    "Maven.sorteos-azure-functions [clean,install].executor": "Run",
+    "Maven.sorteos-azure-functions [clean,package...].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/ProyectosSORTEC2025/FuentesAplicativo/SortecFunctions",
+    "last_opened_file_path": "D:/ProyectosSORTEC2025/FuentesAplicativo/ProyectoQuarkus/sorteosQuarkus",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -50,8 +69,10 @@
 }]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean install" />
       <command value="mvn clean install -U " />
+      <command value="mvn clean package azure-functions:deploy " />
+      <command value="mvn clean install" />
+      <command value="mvn azure-functions:deploy" />
     </option>
   </component>
   <component name="RunManager">
