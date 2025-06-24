@@ -102,7 +102,7 @@
                         </property>
                         <property>
                             <name>EventHubConnectionString</name>
-                            <value>${EVENTHUB_CONNECTION_STRING}</value>
+                            <value>Endpoint=sb://sorteos-eventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LffHVrUCW6nGVQ7TQzc3CmF2GmwObpP6n+AEhBwodgY=</value>
                         </property>
                         <property>
                             <name>OCR_SUBSCRIPTION_KEY</name>
