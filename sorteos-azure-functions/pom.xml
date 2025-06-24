@@ -102,7 +102,6 @@
                         </property>
                         <property>
                             <name>EventHubConnectionString</name>
-                            <value>${EVENTHUB_CONNECTION_STRING}</value>
                         </property>
                         <property>
                             <name>OCR_SUBSCRIPTION_KEY</name>
